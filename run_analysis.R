@@ -50,6 +50,7 @@ var <- gsub("\\(\\)","",var)
 var <- gsub("-","",var)
 var <- gsub("f","frequency",var)
 var <- gsub("t","time",var)
+names(dataset) <- var
 
 ##Name columns
 names(dataset)[1] <- "subject"
