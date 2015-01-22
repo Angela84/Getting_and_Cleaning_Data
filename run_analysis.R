@@ -55,7 +55,10 @@ var <- gsub("t","time",var)
 names(dataset)[1] <- "subject"
 names(dataset)[68] <- "activity"
 
+##Calculate average for each subject and activity
 average_dataset <- ddply(dataset, .(subject, activity), function(x) colMeans(x[, 1:66]))
+
+##Saving the resulting file as .txt
 write.table(average_dataset, "average_data.txt", row.name=FALSE)
 
 
